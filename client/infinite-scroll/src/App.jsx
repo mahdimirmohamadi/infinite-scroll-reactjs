@@ -30,7 +30,7 @@ export default function App() {
   }
 
   const imageRef = useCallback((image) => {
-    if (image == null) return;
+    if (image == null || nextPhotoUrlRef.current == null) return;
 
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
